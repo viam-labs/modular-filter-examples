@@ -1,8 +1,8 @@
 # modular-filter-examples
 
 Examples for creating modular components that filter data capture. This repo contains code for:
-* A modular camera that filters camera data capture, in both go and python. Configuring data capture on this component only keeps the data captured on the underlying camera if the vision service detects a certain color in the captured image.
-* A modular sensor that that filters ultrasonic sensor capture, in go. Configuring data capture on this component only keeps data captured on the underlying sensor if there is a significant change in distance readings.
+* A modular camera that filters camera data capture, in both go (`colorfilter` directory) and python (`pycolorfilter` directory). Configuring data capture on this component only keeps the data captured on the underlying camera if the vision service detects a certain color in the captured image.
+* A modular sensor that that filters ultrasonic sensor capture, in go (`sensorfilter` directory). Configuring data capture on this component only keeps data captured on the underlying sensor if there is a significant change in distance readings.
 
 ## Usage
 
