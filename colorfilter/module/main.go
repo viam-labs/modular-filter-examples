@@ -7,8 +7,8 @@ import (
 	"github.com/edaniels/golog"
 	"go.viam.com/utils"
 
+	"github.com/viam-labs/modular-filter-examples/colorfilter"
 	"go.viam.com/rdk/components/camera"
-	"go.viam.com/rdk/examples/filters/colorfilter"
 	"go.viam.com/rdk/module"
 )
 

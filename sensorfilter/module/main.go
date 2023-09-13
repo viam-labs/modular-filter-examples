@@ -7,8 +7,8 @@ import (
 	"github.com/edaniels/golog"
 	"go.viam.com/utils"
 
+	"github.com/viam-labs/modular-filter-examples/sensorfilter"
 	"go.viam.com/rdk/components/sensor"
-	"go.viam.com/rdk/examples/filters/sensorfilter"
 	"go.viam.com/rdk/module"
 )
 
