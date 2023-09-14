@@ -1,11 +1,10 @@
-module examples
+module github.com/viam-labs/modular-filter-examples
 
 go 1.20
 
 require (
 	github.com/edaniels/golog v0.0.0-20230215213219-28954395e8d0
 	github.com/pkg/errors v0.9.1
-	github.com/viam-labs/modular-filter-examples v0.0.0-20230901153905-bd701e3bf5ec
 	github.com/viamrobotics/gostream v0.0.0-20230829033610-5f340e379696
 	go.viam.com/rdk v0.8.1
 	go.viam.com/utils v0.1.43

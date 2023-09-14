@@ -975,8 +975,6 @@ github.com/valyala/quicktemplate v1.6.3/go.mod h1:fwPzK2fHuYEODzJ9pkw0ipCPNHZ2tD
 github.com/valyala/tcplisten v0.0.0-20161114210144-ceec8f93295a/go.mod h1:v3UYOV9WzVtRmSR+PDvWpU/qWl4Wa5LApYYX4ZtKbio=
 github.com/viam-labs/go-libjpeg v0.3.1 h1:J/byavXHFqRI1PFPrnPbP+wFCr1y+Cn1CwKXrORCPD0=
 github.com/viam-labs/go-libjpeg v0.3.1/go.mod h1:b0ISpf9lJv9MO1h1gXAmSA/osG19cKGYjfYc6aeEjqs=
-github.com/viam-labs/modular-filter-examples v0.0.0-20230901153905-bd701e3bf5ec h1:qkAo03xpEKLx4JsoORZDRy9QQg9wSzcC/ZNsbglcEXk=
-github.com/viam-labs/modular-filter-examples v0.0.0-20230901153905-bd701e3bf5ec/go.mod h1:WZNdLzfTzue0tIjko86RblmM8yA9e3D3CcAJNtW0uK4=
 github.com/viamrobotics/evdev v0.1.3 h1:mR4HFafvbc5Wx4Vp1AUJp6/aITfVx9AKyXWx+rWjpfc=
 github.com/viamrobotics/gostream v0.0.0-20230829033610-5f340e379696 h1:YwQxTyqjANsSXmAKePxHvJloMAo9Y1zp2BEmFiAXHlU=
 github.com/viamrobotics/gostream v0.0.0-20230829033610-5f340e379696/go.mod h1:XbqZO/IuYMHmn2L0QWbEwiytLh20nj6gWIeoEHMWLo8=
