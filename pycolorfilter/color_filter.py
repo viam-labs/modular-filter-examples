@@ -5,11 +5,10 @@ from typing_extensions import Self
 from viam.module.types import Reconfigurable
 from viam.proto.app.robot import ComponentConfig
 from viam.proto.common import ResourceName, ResponseMetadata, Geometry
-from viam.components.camera import Camera
+from viam.components.camera import Camera, ViamImage
 from viam.resource.types import Model, ModelFamily
 from viam.resource.base import ResourceBase
 from viam.media.video import NamedImage
-from PIL import Image
 from viam.errors import NoCaptureToStoreError
 from viam.services.vision import Vision
 from viam.utils import from_dm_from_extra
@@ -54,7 +53,7 @@ class ColorFilterCam(Camera, Reconfigurable):
         """Returns details about the camera"""
         return await self.actual_cam.get_properties()
 
-    async def get_image(self, mime_type: str = "", *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None, **kwargs) -> Image.Image:
+    async def get_image(self, mime_type: str = "", *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None, **kwargs) -> ViamImage:
         """Filters the output of the underlying camera"""
         img = await self.actual_cam.get_image()
         if from_dm_from_extra(extra):
