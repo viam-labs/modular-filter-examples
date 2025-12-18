@@ -8,8 +8,7 @@ from viam.proto.common import ResourceName, ResponseMetadata, Geometry
 from viam.components.camera import Camera
 from viam.resource.types import Model, ModelFamily
 from viam.resource.base import ResourceBase
-from viam.media.video import NamedImage
-from PIL import Image
+from viam.media.video import NamedImage, ViamImage
 from viam.errors import NoCaptureToStoreError
 from viam.services.vision import Vision
 from viam.utils import from_dm_from_extra
@@ -54,9 +53,12 @@ class ColorFilterCam(Camera, Reconfigurable):
         """Returns details about the camera"""
         return await self.actual_cam.get_properties()
 
-    async def get_image(self, mime_type: str = "", *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None, **kwargs) -> Image.Image:
+    async def get_image(
+        self, mime_type: str = "", *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None, **kwargs
+    ) -> ViamImage:
         """Filters the output of the underlying camera"""
-        img = await self.actual_cam.get_image()
+        imgs, _ = await self.actual_cam.get_images()
+        img = imgs[0]
         if from_dm_from_extra(extra):
             detections = await self.vision_service.get_detections(img)
             if len(detections) == 0:
@@ -65,7 +67,9 @@ class ColorFilterCam(Camera, Reconfigurable):
         return img
 
     async def get_images(self, *, timeout: Optional[float] = None, **kwargs) -> Tuple[List[NamedImage], ResponseMetadata]:
-        raise NotImplementedError
+        viam_image = await self.get_image("")
+        named_image = NamedImage("filtered_image", viam_image.data, viam_image.mime_type)
+        return [named_image], ResponseMetadata()
 
     async def get_point_cloud(self, *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None, **kwargs) -> Tuple[bytes, str]:
         raise NotImplementedError
