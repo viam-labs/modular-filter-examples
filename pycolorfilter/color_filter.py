@@ -57,7 +57,8 @@ class ColorFilterCam(Camera, Reconfigurable):
         self, mime_type: str = "", *, extra: Optional[Dict[str, Any]] = None, timeout: Optional[float] = None, **kwargs
     ) -> ViamImage:
         """Filters the output of the underlying camera"""
-        img = await self.actual_cam.get_image()
+        imgs, _ = await self.actual_cam.get_images()
+        img = imgs[0]
         if from_dm_from_extra(extra):
             detections = await self.vision_service.get_detections(img)
             if len(detections) == 0:
